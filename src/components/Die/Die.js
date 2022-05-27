@@ -1,10 +1,12 @@
 import React from "react";
 
 
-function Die() {
+function Die(props) {
   return (
     <>
-      <div className="die">Die</div>
+      <div className="die">
+        {props.value}
+      </div>
     </>
   );
 }

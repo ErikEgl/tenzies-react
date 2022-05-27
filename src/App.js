@@ -1,5 +1,4 @@
 import React from "react";
-
 import Die from "./components/Die/Die";
 
 /**
@@ -18,11 +17,23 @@ import Die from "./components/Die/Die";
  *        in the center of the page
  */
 
+
+
 function App() {
+
   return (
     <>
     <main>
-      <Die />
+      <Die value={Math.ceil(Math.random() * 6)}/>
+      <Die value={Math.ceil(Math.random() * 6)}/>
+      <Die value={Math.ceil(Math.random() * 6)}/>
+      <Die value={Math.ceil(Math.random() * 6)}/>
+      <Die value={Math.ceil(Math.random() * 6)}/>
+      <Die value={Math.ceil(Math.random() * 6)}/>
+      <Die value={Math.ceil(Math.random() * 6)}/>
+      <Die value={Math.ceil(Math.random() * 6)}/>
+      <Die value={Math.ceil(Math.random() * 6)}/>
+      <Die value={Math.ceil(Math.random() * 6)}/>
     </main>
     </>
   );
