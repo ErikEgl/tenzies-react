@@ -1,13 +1,18 @@
 html,
 body {
   margin: 0;
-  padding: 0;
+  padding: 20px;
   color: $main-txt-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $main-border-color;
 }
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
 
 *, *::before, *::after {
   box-sizing: border-box;
-  font-family: Poppins, sans-serif;
+  font-family: Karla, sans-serif;
 }
 

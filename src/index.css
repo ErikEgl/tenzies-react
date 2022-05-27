@@ -1,17 +1,31 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 html,
 body {
   margin: 0;
-  padding: 0;
-  color: #222222;
+  padding: 20px;
+  color: #4A4E74;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0B2434;
 }
 
 *, *::before, *::after {
   box-sizing: border-box;
-  font-family: Poppins, sans-serif;
+  font-family: Karla, sans-serif;
 }
 
-.tenzies {
+main {
+  background-color: #F5F5F5;
+  height: 100%;
+  max-height: 400px;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 5px;
+  aspect-ratio: 1/1;
+}
+
+.die {
   padding: 22px 0;
   box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
 }
