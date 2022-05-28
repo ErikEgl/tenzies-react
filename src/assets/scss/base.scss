@@ -16,3 +16,9 @@ body {
   font-family: Karla, sans-serif;
 }
 
+button {
+  cursor: pointer;
+  &:focus {
+    transform: scale(0.95);
+  }
+}

@@ -1,7 +1,6 @@
 import React from "react";
 import Die from "./components/Die/Die";
 
-
 function allNewDice() {
   let diceValArray = [];
   for (let i = 0; i < 10; i++) {
@@ -11,14 +10,17 @@ function allNewDice() {
 }
 
 function App() {
-  const [arrayOfNumbers, setArrayOfNumbers] = React.useState(allNewDice)
+  const [arrayOfNumbers, setArrayOfNumbers] = React.useState(allNewDice);
   const dieComponent = arrayOfNumbers.map((num, index) => {
-    return  <Die value={num} key={index}/>
-  })
+    return <Die value={num} key={index} />;
+  });
   return (
     <>
       <main>
-        {dieComponent}
+        <div className="wrap">
+          {dieComponent}
+          <button className="roll-btn">Roll Dice</button>
+        </div>
       </main>
     </>
   );
