@@ -1,6 +1,8 @@
 import React from "react";
 import Die from "./components/Die/Die";
 
+import Confetti from 'react-confetti'
+
 function allNewDice() {
   let diceValArray = [];
   for (let i = 0; i < 10; i++) {
@@ -14,7 +16,20 @@ function allNewDice() {
 }
 
 function App() {
+  const [tenzies, setTenzies] = React.useState(false);
   const [arrayOfNumbers, setArrayOfNumbers] = React.useState(allNewDice);
+
+  React.useEffect(() => {
+      const allHeld = arrayOfNumbers.every(die => die.isHeld)
+      const firstValue = arrayOfNumbers[0].value
+      const allSameValue = arrayOfNumbers.every(die => die.value === firstValue)
+      if (allHeld && allSameValue) {
+          setTenzies(true)
+      }
+
+  }, [arrayOfNumbers]);
+
+
   const dieComponent = arrayOfNumbers.map((num, index) => {
     return (
       <Die
@@ -42,16 +57,21 @@ function App() {
       });
     });
   }
+  function resetGame() {
+    setArrayOfNumbers(allNewDice)
+    setTenzies(false)
+  }
 
   return (
     <>
+    {tenzies &&  <Confetti/>}
       <main>
       <h1 className="title">Tenzies</h1>
             <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
         <div className="wrap">
           {dieComponent}
-          <button onClick={rollDice} className="roll-btn">
-            Roll Dice
+          <button onClick={tenzies ? resetGame : rollDice} className="roll-btn">
+          {tenzies ? "New game!" : "Roll Dice"}
           </button>
         </div>
       </main>
