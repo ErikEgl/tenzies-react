@@ -35,8 +35,12 @@ function App() {
     });
   }
 
-  function clickHandler() {
-    return setArrayOfNumbers(allNewDice);
+  function rollDice() {
+    setArrayOfNumbers(prevArray => {
+      return prevArray.map(prevArrayNum => {
+        return prevArrayNum.isHeld === false ? { ...prevArrayNum, value: Math.ceil(Math.random() * 6) } : prevArrayNum;
+      });
+    });
   }
 
   return (
@@ -44,7 +48,7 @@ function App() {
       <main>
         <div className="wrap">
           {dieComponent}
-          <button onClick={clickHandler} className="roll-btn">
+          <button onClick={rollDice} className="roll-btn">
             Roll Dice
           </button>
         </div>
