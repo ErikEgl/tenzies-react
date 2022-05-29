@@ -17,6 +17,7 @@ function allNewDice() {
 
 function App() {
   const [tenzies, setTenzies] = React.useState(false);
+  const [count, setCount] = React.useState(0);
   const [arrayOfNumbers, setArrayOfNumbers] = React.useState(allNewDice);
 
   React.useEffect(() => {
@@ -51,6 +52,7 @@ function App() {
   }
 
   function rollDice() {
+    setCount(prevCount => prevCount + 1)
     setArrayOfNumbers(prevArray => {
       return prevArray.map(prevArrayNum => {
         return prevArrayNum.isHeld === false ? { ...prevArrayNum, value: Math.ceil(Math.random() * 6) } : prevArrayNum;
@@ -60,6 +62,7 @@ function App() {
   function resetGame() {
     setArrayOfNumbers(allNewDice)
     setTenzies(false)
+    setCount(0)
   }
 
   return (
@@ -67,7 +70,10 @@ function App() {
     {tenzies &&  <Confetti/>}
       <main>
       <h1 className="title">Tenzies</h1>
-            <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
+        {tenzies ? 
+        <p className="instructions">Dice rolls till win: {count}</p> : 
+        <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>}
+        
         <div className="wrap">
           {dieComponent}
           <button onClick={tenzies ? resetGame : rollDice} className="roll-btn">
