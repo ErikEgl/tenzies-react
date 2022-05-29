@@ -4,7 +4,7 @@ function Die(props) {
   return (
     <>
       <div className="die">
-        <button className="die-num">{props.value}</button>
+        <button onClick={props.holdDice} className={props.isHeld === true ? 'die-num is-held' : 'die-num'}>{props.value}</button>
       </div>
     </>
   );

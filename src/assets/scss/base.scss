@@ -10,15 +10,16 @@ body {
   background-color: $main-border-color;
 }
 
-
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   font-family: Karla, sans-serif;
 }
 
 button {
   cursor: pointer;
-  &:focus {
-    transform: scale(0.95);
+  &:active {
+    box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
   }
 }
