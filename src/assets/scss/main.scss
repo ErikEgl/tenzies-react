@@ -9,6 +9,14 @@ main {
     max-width: 800px;
     border-radius: $main-border-radius;
     aspect-ratio: 1/1;
+    gap: 1rem;
+}
+.title {
+    text-align: center;
+    margin: 0;
+}
+.instructions {
+    text-align: center;
 }
 .wrap {
     display: grid;
@@ -18,6 +26,7 @@ main {
     place-items: center;
 }
 .roll-btn {
+    padding: 10px 15px;
     background-color: $btn-color;
     color: $white;
     border: 0;
