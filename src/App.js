@@ -14,7 +14,8 @@ function allNewDice() {
   }
   return diceValArray;
 }
-
+//TODO: CSS: put real dots on the dice
+//TODO: track the time it took to win
 function App() {
   const [tenzies, setTenzies] = React.useState(false);
   const [count, setCount] = React.useState(0);
@@ -69,7 +70,7 @@ function App() {
     <>
     {tenzies &&  <Confetti/>}
       <main>
-      <h1 className="title">Tenzies</h1>
+        <h1 className="title">Tenzies</h1>
         {tenzies ? 
         <p className="instructions">Dice rolls till win: {count}</p> : 
         <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>}
