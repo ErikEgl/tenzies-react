@@ -95,10 +95,74 @@ main {
 .die:nth-child(10) {
   grid-area: 2/5/3/6;
 }
+.die .die-value-1 {
+  background-color: red;
+}
+.die .die-value-1 .dot-1 {
+  grid-area: 2/2/3/3;
+}
+.die .die-value-2 .dot-1 {
+  grid-area: 1/3/2/4;
+}
+.die .die-value-2 .dot-2 {
+  grid-area: 3/1/4/2;
+}
+.die .die-value-3 .dot-1 {
+  grid-area: 1/3/2/4;
+}
+.die .die-value-3 .dot-2 {
+  grid-area: 2/2/3/3;
+}
+.die .die-value-3 .dot-3 {
+  grid-area: 3/1/4/2;
+}
+.die .die-value-4 .dot-1 {
+  grid-area: 1/1/2/2;
+}
+.die .die-value-4 .dot-2 {
+  grid-area: 1/3/2/4;
+}
+.die .die-value-4 .dot-3 {
+  grid-area: 3/1/4/2;
+}
+.die .die-value-4 .dot-4 {
+  grid-area: 3/3/4/4;
+}
+.die .die-value-5 .dot-1 {
+  grid-area: 1/1/2/2;
+}
+.die .die-value-5 .dot-2 {
+  grid-area: 1/3/2/4;
+}
+.die .die-value-5 .dot-3 {
+  grid-area: 2/2/3/3;
+}
+.die .die-value-5 .dot-4 {
+  grid-area: 3/1/4/2;
+}
+.die .die-value-5 .dot-5 {
+  grid-area: 3/3/4/4;
+}
+.die .die-value-6 .dot-1 {
+  grid-area: 1/1/2/2;
+}
+.die .die-value-6 .dot-2 {
+  grid-area: 1/3/2/4;
+}
+.die .die-value-6 .dot-3 {
+  grid-area: 2/1/3/2;
+}
+.die .die-value-6 .dot-4 {
+  grid-area: 2/3/3/4;
+}
+.die .die-value-6 .dot-5 {
+  grid-area: 3/1/4/2;
+}
+.die .die-value-6 .dot-6 {
+  grid-area: 3/3/4/4;
+}
 .die .die-num {
   border: 0;
-  place-items: center;
-  display: grid;
   width: 35px;
   height: 35px;
   background-color: #ffffff;
@@ -108,9 +172,19 @@ main {
   color: #2b283a;
   border-radius: 5px;
   padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 }
 .die .die-num.is-held {
   background-color: #59e391;
+}
+.die .die-num .dot {
+  place-self: center;
+  background-color: #000;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
 }
 
 /*# sourceMappingURL=index.css.map */
